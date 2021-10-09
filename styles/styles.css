@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+:root {
+    --inputs-height: 74px;
+    --inputs-width: 286px;
+}
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    height: 100vh;
+    background: #3B5843;
+}
+
+.main {
+    width: max-content;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+.search-field {
+    margin: 0 0 10px 0;
+}
+
+.search-input {
+    box-sizing: border-box;
+    width: var(--inputs-width);
+    height: var(--inputs-height);
+    margin: 0 14px;
+    font-size: 36px;
+    background: rgba(82, 170, 144, 0.64);
+}
+
+.search-input::-webkit-input-placeholder {
+    color: white;
+}
+
+.left-search-input {
+    margin-left: 0;
+}
+
+.search-input-btn {
+    font-weight: bold;
+    margin-right: 0;
+    color: black;
+    background: #00FFB2;
+}
+
+.search-input-btn:hover {
+    opacity: 0.7;
+}
+
+.lyrics-field {
+    height: 80%;
+    background: rgba(124, 255, 200, 0.38);
+}
+
+.plate {
+    font-family: "Open Sans", sans-serif;
+    border-radius: 6px;
+    text-align: center;
+    border: 0;
+}
