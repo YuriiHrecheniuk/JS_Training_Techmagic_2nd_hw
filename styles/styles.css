@@ -3,19 +3,26 @@
 :root {
     --inputs-height: 74px;
     --inputs-width: 286px;
+    --text-background: rgb(82, 170, 144);
 }
 
-body {
+html, body {
+    height: 100%;
     box-sizing: border-box;
     margin: 0;
-    height: 100vh;
     background: #3B5843;
 }
 
+body::-webkit-scrollbar {
+    width: 0;
+}
+
 .main {
+    box-sizing: border-box;
+    min-height: 100%;
     width: max-content;
-    height: 100%;
     margin: 0 auto;
+    padding: 10px;
     display: flex;
     flex-flow: column;
     justify-content: center;
@@ -31,11 +38,19 @@ body {
     height: var(--inputs-height);
     margin: 0 14px;
     font-size: 36px;
-    background: rgba(82, 170, 144, 0.64);
+    background: var(--text-background);
+}
+
+/* disable white background when autofilling the inputs */
+.search-input:-webkit-autofill,
+.search-input:-webkit-autofill:hover,
+.search-input:-webkit-autofill:focus,
+.search-input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 var(--inputs-height) var(--text-background) inset !important;
 }
 
 .search-input::-webkit-input-placeholder {
-    color: white;
+    color: black;
 }
 
 .left-search-input {
@@ -55,13 +70,33 @@ body {
 }
 
 .lyrics-field {
-    height: 80%;
-    background: rgba(124, 255, 200, 0.38);
+    flex: 1;
+    background: var(--text-background);
 }
 
-.plate {
+.box {
     font-family: "Open Sans", sans-serif;
     border-radius: 6px;
     text-align: center;
     border: 0;
+}
+
+.counter {
+    --counter-size: 100px;
+
+    padding: 10px;
+    text-align: start;
+    height: var(--counter-size);
+    width: var(--counter-size);
+    font-size: 20px;
+    line-height: calc(var(--counter-size) / 3);
+    position: absolute;
+    margin: 0;
+    top: 10px;
+    left: 10px;
+}
+
+.requests-number {
+    color: #E4FFF9;
+    font-weight: bold;
 }

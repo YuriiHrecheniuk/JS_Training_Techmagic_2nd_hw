@@ -7,19 +7,21 @@
 </head>
 <body>
 <main class="main">
-    <div class="search-field">
-        <form>
-            <label for="artist-input"></label>
-            <input type="text" id="artist-input" placeholder="Artist:" class="search-input left-search-input plate" required>
-            <label for="title-input"></label>
-            <input type="text" id="title-input" placeholder="Title:" class="search-input plate" required>
-            <input type="submit" class="search-input search-input-btn plate" value="Search">
-        </form>
-    </div>
-    <div class="lyrics-field plate" id="lyrics-div">
+    <form id="search-field" class="search-field">
+        <label for="artist-input"></label>
+        <input type="text" id="artist-input" placeholder="Artist:" class="search-input left-search-input box"
+               required>
+        <label for="title-input"></label>
+        <input type="text" id="title-input" placeholder="Title:" class="search-input box" required>
+        <input type="submit" class="search-input search-input-btn box" value="Search">
+    </form>
+    <div class="lyrics-field box" id="lyrics-field">
         <h2>Lyrics:</h2>
     </div>
 </main>
+<div id="counter" class="counter box">
+    Number of requests: <span id="requests-number" class="requests-number">0</span>
+</div>
 <script type="module" src="./scripts/App.js"></script>
 </body>
 </html>

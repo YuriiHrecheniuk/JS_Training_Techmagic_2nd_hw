@@ -19,7 +19,6 @@ export default class LyricsGenerator {
     }
 
     if (this.fetchLyrics.lyricsCache.get(artist + title)) {
-      console.log('cache')
       return this.fetchLyrics.lyricsCache.get(artist + title);
     }
 
@@ -28,14 +27,13 @@ export default class LyricsGenerator {
         if (!response.ok)
           throw Error(response.statusText)
 
-        return response
+        return response.json()
       })
-      .then(response => response.json())
       .then(data => data.lyrics)
       .catch(() => 'No lyrics found')
-      .then(data => {
-        this.fetchLyrics.lyricsCache.set(artist + title, data);
-        return data;
+      .then(lyrics => {
+        this.fetchLyrics.lyricsCache.set(artist + title, lyrics);
+        return lyrics;
       })
   }
 
