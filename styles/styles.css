@@ -96,7 +96,13 @@ body::-webkit-scrollbar {
     left: 10px;
 }
 
-.requests-number {
+.counter-number {
     color: #E4FFF9;
     font-weight: bold;
+}
+
+.session-time-counter {
+    width: max-content;
+    text-align: right;
+    left: 91%;
 }
