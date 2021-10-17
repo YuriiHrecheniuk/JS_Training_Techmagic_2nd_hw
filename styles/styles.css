@@ -4,6 +4,7 @@
     --inputs-height: 74px;
     --inputs-width: 286px;
     --text-background: rgb(82, 170, 144);
+    --button-background: #00FFB2;
 }
 
 html, body {
@@ -61,7 +62,7 @@ body::-webkit-scrollbar {
     font-weight: bold;
     margin-right: 0;
     color: black;
-    background: #00FFB2;
+    background: var(--button-background);
 }
 
 .search-input-btn:hover {
@@ -104,5 +105,14 @@ body::-webkit-scrollbar {
 .session-time-counter {
     width: max-content;
     text-align: right;
-    left: 91%;
+    left: 90%;
+}
+
+.kanye-button {
+    position: absolute;
+    top: 94%;
+
+    font-size: 20px;
+    height: auto;
+    width: auto;
 }
