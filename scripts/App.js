@@ -1,7 +1,9 @@
 import LyricsGenerator from "./modules/classes/LyricsGenerator.js";
 import counter from "./modules/counter.js"
+import getQuote from "./modules/getQuote.js";
 
 // ----------Session time----------
+// 1st asynchronous operation
 const sessionTime = document.getElementById('session-time');
 let sessionTimeCounter = counter();
 const time = {
@@ -19,16 +21,15 @@ setInterval(() => {
   }, 1000);
 // --------------------------
 
-
+// ------------Get lyrics---------
+// 2nd asynchronous operations
 const lyricsGenerator = new LyricsGenerator();
-
 const searchField = document.getElementById('search-field');
 const artistInput = searchField.querySelector('#artist-input');
 const titleInput = searchField.querySelector('#title-input');
 
 const lyricsField = document.getElementById('lyrics-field');
 
-// ------------Get lyrics---------
 searchField.addEventListener('submit', renderLyrics);
 
 async function renderLyrics(event) {
@@ -45,6 +46,7 @@ async function renderLyrics(event) {
 
   await lyricsField.appendChild(lyricsGenerator.makeLyricsNode(lyrics));
 }
+// ----------------------------------
 
 
 // ------------Requests Counter-----
@@ -65,3 +67,10 @@ function updateCounter(event) {
 }
 
 // --------------------------------
+
+// -------Get random Kanye quote----
+// 3rd asynchronous operation
+
+const randomKanyeQuoteBtn = document.getElementById('random-kanye-quote');
+
+randomKanyeQuoteBtn.addEventListener('click', () => getQuote().then(data => alert(data.quote)));
